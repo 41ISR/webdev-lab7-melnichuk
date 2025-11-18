@@ -17,7 +17,13 @@ const registerUser = async (user) => {
     return res
 }
 
+const loginUser = async (user) => {
+    const res = await apiInstance.post("/auth/login", user)
+    return res
+}
+
 export const api = {
     getMessages,
-    registerUser
+    registerUser,
+    loginUser
 }
