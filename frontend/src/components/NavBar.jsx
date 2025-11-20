@@ -3,7 +3,7 @@ import { useUserStore } from "../store/useUserStore"
 
 
 const NavBar = () => {
-    const {token} = useUserStore()
+    const {session} = useUserStore()
     
     return (
         <div className="navbar">
@@ -11,7 +11,7 @@ const NavBar = () => {
                 <h2 className="brand">Feedback</h2>
                 <ul className="navbar-nav">
                     <li><Link to={'/'}>Home sweet home</Link></li>
-                    {!token ? (
+                    {!session ? (
                         <li>
                             <Link to={'/signin'}>Sign in</Link>
                         </li>

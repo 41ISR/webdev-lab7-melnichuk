@@ -5,7 +5,8 @@ export const useUserStore = create(
   persist(
     (set, get) => ({
       session: 0,
-      setSession: (session) => set({...session}),
+      setSession: (session) => set({session}),
+      clearSession: () => set({session: undefined})
     }),
     {
       name: 'user-storage', // name of the item in the storage (must be unique)

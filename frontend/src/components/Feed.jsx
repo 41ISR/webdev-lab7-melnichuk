@@ -1,22 +1,14 @@
 import { useEffect, useState } from "react"
 import { api } from "../api/api"
 import MessageCard from "./MessageCard"
+import { useMessageStore } from "../store/useMessageStore"
 
 
 const Feed = ({title = 'Сообщение'}) => {
-    const [messages, setMesages] = useState([])
+    const {messages, getMessages} = useMessageStore()
 
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const data = await api.getMessages()
-                setMesages(data)
-            } catch (error) {
-                console.error(error);
-                
-            }    
-        }
-        fetchData()
+        getMessages()
     }, [])
 
     
@@ -28,7 +20,7 @@ const Feed = ({title = 'Сообщение'}) => {
                     <h2 className="section-title">{title}</h2>
                     <div className="messages-grid">
                         {messages.map((el) => (
-                            <MessageCard {...el} />
+                            <MessageCard key={el.id} {...el} />
                         ))}
                     </div>
                 </div>

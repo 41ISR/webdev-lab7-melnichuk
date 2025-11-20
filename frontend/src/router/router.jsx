@@ -3,6 +3,7 @@ import Layout from '../pages/Layout'
 import SignIn from '../pages/SignIn'
 import SignUp from '../pages/SignUp'
 import Board from '../pages/Board'
+import Logout from '../pages/Logout'
 
 const router = createBrowserRouter([
     {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
             }
         ]
     },
+    {
+        path: '/logout',
+        element: <Logout />
+    }
 ])
 
 export default router
