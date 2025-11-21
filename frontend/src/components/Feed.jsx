@@ -6,9 +6,12 @@ import { useMessageStore } from "../store/useMessageStore"
 
 const Feed = ({title = 'Сообщение'}) => {
     const {messages, getMessages} = useMessageStore()
-
+    const [timerId, setTimerId] = useState(undefined)
     useEffect(() => {
         getMessages()
+        setTimerId(setInterval(() => {getMessages()}, 5000))
+
+        return () => {clearInterval(timerId)}
     }, [])
 
     
