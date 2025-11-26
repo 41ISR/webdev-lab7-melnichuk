@@ -7,10 +7,10 @@ const Board = () => {
     const {session} = useUserStore()
     return (
         <>
-            <h1>Board</h1>
+            {/* <h1>Board</h1> */}
             
             {session && <MessageField />}
-            <Feed title="Last message" />
+            <Feed title="Last messages" />
         </>
     )
 }

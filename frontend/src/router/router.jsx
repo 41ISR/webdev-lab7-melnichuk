@@ -4,6 +4,8 @@ import SignIn from '../pages/SignIn'
 import SignUp from '../pages/SignUp'
 import Board from '../pages/Board'
 import Logout from '../pages/Logout'
+import MyMessages from '../pages/MyMessages'
+import AuthGuard from '../components/AuthGuard'
 
 const router = createBrowserRouter([
     {
@@ -21,6 +23,10 @@ const router = createBrowserRouter([
             {
                 index: true,
                 element: <Board />
+            },
+            {
+                path: '/mymessages',
+                element: <AuthGuard><MyMessages /></AuthGuard>
             }
         ]
     },

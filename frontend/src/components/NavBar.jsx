@@ -16,9 +16,12 @@ const NavBar = () => {
                             <Link to={'/signin'}>Sign in</Link>
                         </li>
                     ):(
+                        <><li>
+                            <Link to={'/mymessages'}>My messages</Link>
+                        </li>
                         <li>
                             <Link to={'/logout'}>Log out</Link>
-                        </li>
+                        </li></>
                     )}
                 </ul>
             </div>
